@@ -20,7 +20,7 @@ function apiRoutes(app){
         for (let i = 0; i < friendsList.length; i++){
             var sum = 0;
             for (let j = 0; j < friendsList[i].scores.length; j++){
-                var difference = Math.abs(friendsList[i].scores[j]- parstInt(newFriend.scores[j]));  
+                var difference = Math.abs(friendsList[i].scores[j]- parseInt(newFriend.scores[j]));  
                 sum += difference; 
                 if (sum < highScore){
                     highScore = sum;
@@ -29,8 +29,7 @@ function apiRoutes(app){
             }
         } 
         
-        
-        res.json(friendsList[i]);
+        res.json(bestFriend);
         friendsList.push(newFriend);
         
       });
