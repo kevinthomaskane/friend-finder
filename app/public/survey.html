@@ -8,7 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
-    
+        <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
 
 </head>
 
@@ -25,7 +29,7 @@
         <hr>
         <h3>Question 1</h3>
         <h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
-        <select class="chosen-select" id="q1" >
+        <select class="chosen-select" id="q1">
             <option value="">Choose an option</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -33,12 +37,12 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
         </select>
-        
+
         <h3>
             <strong>Question 2</strong>
         </h3>
         <h4>Generally speaking, you rely more on your experience than your imagination.</h4>
-        <select class="chosen-select" id="q2" >
+        <select class="chosen-select" id="q2">
             <option value="">Choose an option</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -46,12 +50,12 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
         </select>
-        
+
         <h3>
             <strong>Question 3</strong>
         </h3>
         <h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
-        <select class="chosen-select" id="q3" >
+        <select class="chosen-select" id="q3">
             <option value="">Choose an option</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -59,12 +63,12 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
         </select>
-        
+
         <h3>
             <strong>Question 4</strong>
         </h3>
         <h4>You rarely do something just out of sheer curiosity.</h4>
-        <select class="chosen-select" id="q4" >
+        <select class="chosen-select" id="q4">
             <option value="">Choose an option</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -72,13 +76,13 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
         </select>
-        
+
         <h3>
             <strong>Question 5</strong>
         </h3>
 
         <h4>People can rarely upset you.</h4>
-        <select class="chosen-select" id="q5" >
+        <select class="chosen-select" id="q5">
             <option value="">Choose an option</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -86,13 +90,13 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
         </select>
-        
+
         <h3>
             <strong>Question 6</strong>
         </h3>
 
         <h4>It is often difficult for you to relate to other people’s feelings.</h4>
-        <select class="chosen-select" id="q6" >
+        <select class="chosen-select" id="q6">
             <option value="">Choose an option</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -101,12 +105,12 @@
             <option value="5">5 (Strongly Agree)</option>
         </select>
 
-        
+
         <h3>
             <strong>Question 7</strong>
         </h3>
         <h4>In a discussion, truth should be more important than people’s sensitivities.</h4>
-        <select class="chosen-select" id="q7" >
+        <select class="chosen-select" id="q7">
             <option value="">Choose an option</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -118,12 +122,12 @@
         <br>
         <br>
         <br>
-        
+
         <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">
             <i class="fa fa-check-circle" aria-hidden="true"></i>
             Submit</button>
-            <br>
-            <br>
+        <br>
+        <br>
         <br>
         <div id="results-modal" class="modal fade" role="dialog">
             <div class="modal-dialog">
@@ -149,27 +153,20 @@
         </div>
     </div>
 
-<script>
+    <script>
 
+        $("#submit").on("click", function () {
+            var newFriend = {
+                name: $("#name").val().trim(),
+                photo: $("#photo").val().trim(),
+                scores: [$("#q1").val(), $("#q2").val(), $("#q3").val(), $("#q4").val(), $("#q5").val(), $("#q6").val(), $("#q7").val()]
+            }
 
-$("#submit").on("click", function() {
-      
-      $.get("/api/" + searchedCharacter, function(data) {
-        console.log(data);
-        if (data) {
-          $("#stats").show();
-          $("#name").text(data.name);
-          $("#role").text(data.role);
-          $("#age").text(data.age);
-          $("#force-points").text(data.forcePoints);
-        }
-        else {
-          $("#name").text("The force is not strong with this one. Your character was not found.");
-          $("#stats").hide();
-        }
-      });
-    });
-</script>
+            $.post("/api/friends", newFriend).then(function(data){
+                console.log(data)
+            })
+        });
+    </script>
 </body>
 
 </html>
