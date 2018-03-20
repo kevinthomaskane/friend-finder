@@ -13,17 +13,26 @@ function apiRoutes(app){
     });
     
     app.post("/api/friends", function(req, res) {
-        console.log("this is the req.body: " + req.body)
-        // var newfriend = {
-        //    name: req.body.name,
-        //    photo: req.body.photo,
-        //    scores: req.body.scores
-        // }
+       
         var newFriend = req.body;
-        // newfriend.routeName = newcharacter.name.replace(/\s+/g, "").toLowerCase();
-        console.log("this is the new friend object: " + newFriend);
+       var bestFriend;
+       var highScore = 1000;
+        for (let i = 0; i < friendsList.length; i++){
+            var sum = 0;
+            for (let j = 0; j < friendsList[i].scores.length; j++){
+                var difference = Math.abs(friendsList[i].scores[j]- parstInt(newFriend.scores[j]));  
+                sum += difference; 
+                if (sum < highScore){
+                    highScore = sum;
+                    bestFriend = friendsList[i];
+                }
+            }
+        } 
+        
+        
+        res.json(friendsList[i]);
         friendsList.push(newFriend);
-        res.json(newFriend);
+        
       });
 }
 
