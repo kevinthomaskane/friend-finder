@@ -27,22 +27,32 @@ var friends = [
     },
     {
         "name":"Amber",
-        "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        "photo":"https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-1/p100x100/12219541_10153356765184482_7294572790098888663_n.jpg?_nc_cat=0&oh=3af221fd98dc5f0bcaf0f7a9add90e3d&oe=5B2CFA57",
         "scores":[3, 5, 5, 5, 3, 2, 5]
     },
     {
         "name":"Connor",
-        "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        "photo":"https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-1/c0.53.320.320/p320x320/20882693_1625168994197468_6149619139234719511_n.jpg?oh=b7b2886f3b7695e1134954510c5fe978&oe=5B42DF88",
         "scores":[4, 2, 2, 1, 2, 3, 5]
     },
     {
+        "name":"Joe",
+        "photo":"https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-1/p200x200/28058865_10156096412326737_8215846672791918561_n.jpg?oh=4bbbe6ce0b81660fca98e9bab70604b5&oe=5B49EF2E",
+        "scores":[4, 4, 2, 3, 1, 3, 1]
+    },
+    {
+        "name":"Carl",
+        "photo":"https://scontent-lax3-2.xx.fbcdn.net/v/t1.0-1/p320x320/20953681_1429173360503759_1834374369172804787_n.jpg?oh=525c7fbd8f8f76bd8226f63309b9dd08&oe=5B3E04D9",
+        "scores":[3, 3, 2, 1, 2, 3, 5]
+    },
+    {
         "name":"Karley",
-        "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        "photo":"https://scontent-lax3-1.xx.fbcdn.net/v/t1.0-1/p200x200/20294478_10210113787217409_1174119415787155462_n.jpg?oh=a8addfe74dd202ad10abaa3e6775b170&oe=5B3F81D3",
         "scores":[2, 1, 2, 5, 3, 5, 4]
     },
     {
         "name":"Jessica",
-        "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        "photo":"https://orig00.deviantart.net/b682/f/2013/135/4/3/profile_picture_by_mellodydoll_stock-d65fbf8.jpg",
         "scores":[4, 3, 2, 1, 3, 3, 2]
     },
 ]
