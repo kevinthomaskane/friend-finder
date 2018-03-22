@@ -1,0 +1,28 @@
+body{
+    background-image: url("gif.gif");
+    background-size: 1300px 1300px;
+}
+
+*{
+    color: white;
+}
+
+select{
+    color: black;
+}
+
+.modal-title{
+    color: black;
+}
+
+.modal-body{
+    color: black;
+}
+
+h2{
+    color: black;
+}
+
+.modal-content{
+    text-align: center;
+}

@@ -17,7 +17,9 @@ app.use(bodyParser.json());
 
 
 apiRoutes(app)
-htmlRoutes(app, path)
+htmlRoutes(app, path, express)
+
+
 
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
